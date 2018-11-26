@@ -1,0 +1,18 @@
+
+Source : https://www.jetbrains.com/pycharm/
+
+Pycharm is an IDE tool kit basically meant for developing programs and/or building softwares in python. 
+Developed by JetBrains it provides assistive toolkit and build-in features like most of the IDE’s like eclipse.
+
+PyCharm is cross-platform, with Windows, macOS and Linux versions. The Community Edition is released under the 
+Apache License, and there is also Professional Edition with extra features, released under a proprietary license.
+
+Download the Pycharm for Kali Linux and extrct it.
+Move it to /opt folder. To run the Pycharm type in terminal.
+> cd /opt/pycharm/bin
+> ls
+> ./pycharm.sh
+
+Now cretae a project to your desire directory e,g /root/PycharmProjects/mac_changer.py
+Write your code and run it from the terminal by typing: e,g
+> python mac_changer.py 
