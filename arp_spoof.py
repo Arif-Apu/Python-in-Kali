@@ -34,7 +34,7 @@ def restore(destination_ip, source_ip):
     print(packet.show())
 
 
-target_ip = "192.168.2.114"
+target_ip = "192.168.2.123"
 gateway_ip = "192.168.2.1"
 
 
@@ -52,3 +52,6 @@ except KeyboardInterrupt:
     restore(target_ip, gateway_ip)
     restore(gateway_ip, target_ip)
 
+    
+    
+    
