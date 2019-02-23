@@ -1,17 +1,28 @@
+
 '''	iptables -I INPUT -j NFQUEUE --queue-num 0
 	iptables -I OUTPUT -j NFQUEUE --queue-num 0
 	iptables -I FORWARD -j NFQUEUE --queue-num 0
 	iptables --flush
-NFQUEUE is an iptables and ip6tables target which delegate the decision on packets.
 
 run arp_spoof.py to become man in the middle.	
+
 '''
 
-# !usr/bin/python
+# !usr/bin/env python
 
 import scapy.all as scapy
 import netfilterqueue
 
+'''
+NFQUEUE is an iptables and ip6tables target which delegate the decision on packets.
+NetfilterQueue provides access to packets matched by an iptables rule in Linux. Packets so matched can be accepted, dropped, 
+altered, or given a mark.
+
+nfqueue-bindings is a set of high-level modules for several languages (Python and Perl, for the moment), 
+for libnetfilter_queue. It provides a userspace API to access packets that have been queued by the kernel packet filter 
+using the NFQUEUE target.
+
+'''
 
 def process_packet(packet):
     scapy_packet = scapy.IP(packet.get_payload())
