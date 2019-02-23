@@ -1,8 +1,21 @@
+
 #!usr/bin/env python
 
 import subprocess
 import optparse
 import re
+
+'''
+subprocess — Subprocess management. Source code: Lib/subprocess.py. The subprocess module allows you to spawn new processes,
+connect to their input/output/error pipes, and obtain their return codes.
+
+re- A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, 
+using a specialized syntax held in a pattern. Regular expressions are widely used in UNIX world.
+
+OptParse is a module introduced in Python that makes it easy to write command line tools. It allows users to specify options 
+in the conventional GNU/POSIX syntax, and additionally generates usage and help messages for you.
+
+'''
 
 def get_arguments():
     parser = optparse.OptionParser()
