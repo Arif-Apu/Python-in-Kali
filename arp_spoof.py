@@ -6,6 +6,21 @@ import scapy.all as scapy
 import time
 import sys
 
+'''
+Scapy is a Python program that enables the user to send, sniff and dissect and forge network packets. 
+This capability allows construction of tools that can probe, scan or attack networks.
+
+Scapy is a powerful interactive packet manipulation program. It is able to forge or decode packets of a wide number of 
+protocols, send them on the wire, capture them, match requests and replies, and much more. It can easily handle most 
+classical tasks like scanning, tracerouting, probing, unit tests, attacks or network discovery.
+
+Time module provides various functions to manipulate time values.
+
+The sys module provides information about constants, functions and methods of the Python interpreter. 
+sys — System-specific parameters and functions. This module provides access to some variables used or maintained by the 
+interpreter and to functions that interact strongly with the interpreter.
+
+'''
 
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -16,7 +31,9 @@ def get_mac(ip):
     return answered_list[0][1].hwsrc
 
 
-'''op=2 means ARP Response, op=1 is a request'''
+'''
+op=2 means ARP Response, op=1 is a request
+'''
 
 
 def spoof(target_ip, spoof_ip):
