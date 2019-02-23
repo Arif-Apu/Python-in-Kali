@@ -4,12 +4,15 @@
 import requests
 
 '''
-The requests library is the de facto standard for making HTTP requests in Python. It abstracts the complexities of making requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your application.
+The requests library is the de facto standard for making HTTP requests in Python. It abstracts the complexities of making 
+requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your 
+application.
 
-Requests will allow you to send HTTP/1.1 requests using Python. With it, you can add content like headers, form data, multipart files, and parameters via simple Python libraries. It also allows you to access the response data of Python in the same way.
+Requests will allow you to send HTTP/1.1 requests using Python. With it, you can add content like headers, form data, 
+multipart files, and parameters via simple Python libraries. It also allows you to access the response data of Python
+in the same way.
 
 '''
-
 
 def request(url):
     try:
@@ -28,3 +31,6 @@ with open("/root/common.txt", "r") as wordlist_file:
         if response:
             print("[+] Discovering URL --> " + test_url)
 
+
+            
+            
