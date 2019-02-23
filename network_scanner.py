@@ -1,4 +1,5 @@
-#!/usr/bin/python
+
+#!/usr/bin/env python
 #Source: https://scapy.readthedocs.io/en/latest/installation.html
 #Source: https://github.com/secdev/scapy
 #from scapy.all import *
@@ -6,6 +7,10 @@
 import scapy.all as scapy
 import argparse
 
+'''
+Python argparse module is the preferred way to parse command line arguments. Parsing command-line arguments is a very common 
+task, which Python scripts do and behave according to the passed values. 
+'''
 
 def get_arguments():
     parser = argparse.ArgumentParser()
@@ -36,3 +41,7 @@ def print_result(results_list):
 options = get_arguments()
 scan_result = scan(options.target)
 print_result(scan_result)
+
+
+
+
