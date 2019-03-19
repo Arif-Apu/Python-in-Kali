@@ -6,11 +6,14 @@ import re
 import urlparse
 
 '''
-urlparse — Parse URLs into components. ... This module defines a standard interface to break Uniform Resource Locator (URL) strings up in components (addressing scheme, network location, path etc.), to combine the components back into a URL string, and to convert a “relative URL” to an absolute URL given a “base URL.”
+https://docs.python.org/3/library/urllib.parse.html?highlight=urlparse
+urlparse — Parse URLs into components. This module defines a standard interface to break Uniform Resource Locator (URL) 
+strings up in components (addressing scheme, network location, path etc.), to combine the components back into a URL string, 
+and to convert a relative URL to an absolute URL given a base URL.
 
 '''
 
-target_url = "https://example.com"
+target_url = input("\nEnter Target URL inside Single or Double Quotation marks: \n\nTarget URL --> ")
 target_links = []
 
 
