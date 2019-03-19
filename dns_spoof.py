@@ -1,4 +1,5 @@
 
+
 '''	iptables -I INPUT -j NFQUEUE --queue-num 0
 	iptables -I OUTPUT -j NFQUEUE --queue-num 0
 	iptables -I FORWARD -j NFQUEUE --queue-num 0
@@ -8,7 +9,7 @@ run arp_spoof.py to become man in the middle.
 
 '''
 
-# !usr/bin/env python
+# !/usr/bin/env python
 
 import scapy.all as scapy
 import netfilterqueue
