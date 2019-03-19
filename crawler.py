@@ -11,6 +11,10 @@ urlparse — Parse URLs into components. This module defines a standard interfac
 strings up in components (addressing scheme, network location, path etc.), to combine the components back into a URL string, 
 and to convert a relative URL to an absolute URL given a base URL.
 
+https://docs.python.org/3/library/re.html?highlight=re#module-re
+A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a 
+particular string matches a given regular expression (or if a given regular expression matches a particular string, which 
+comes down to the same thing).
 '''
 
 target_url = input("\nEnter Target URL inside Single or Double Quotation marks: \n\nTarget URL --> ")
@@ -20,8 +24,6 @@ target_links = []
 def extract_links_from(url):
     response = requests.get(url)
     return re.findall('(?:href=")(.*?)"', response.content)
-    #href_links = re.findall('href=".*"', response.content)
-
 
 def crawl(url):
     href_links = extract_links_from(url)
@@ -35,7 +37,6 @@ def crawl(url):
             target_links.append(link)
             print(link)
             crawl(link)
-
 
 crawl(target_url)
 
