@@ -1,6 +1,7 @@
 
 #!/usr/bin/env python
 #automatically forward the packets through Kali, command: echo 1 > /proc/sys/net/ipv4/ip_forward
+#stop port forwarding: echo 0 > /proc/sys/net/ipv4/ip_forward
 
 
 import scapy.all as scapy
