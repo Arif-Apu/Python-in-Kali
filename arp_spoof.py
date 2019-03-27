@@ -8,6 +8,7 @@ import time
 import sys
 
 '''
+https://scapy.readthedocs.io/en/latest/index.html
 Scapy is a Python program that enables the user to send, sniff and dissect and forge network packets. 
 This capability allows construction of tools that can probe, scan or attack networks.
 
@@ -15,8 +16,10 @@ Scapy is a powerful interactive packet manipulation program. It is able to forge
 protocols, send them on the wire, capture them, match requests and replies, and much more. It can easily handle most 
 classical tasks like scanning, tracerouting, probing, unit tests, attacks or network discovery.
 
+https://docs.python.org/3/library/time.html?highlight=time#module-time
 Time module provides various functions to manipulate time values.
 
+https://docs.python.org/3/library/sys.html?highlight=sys#module-sys
 The sys module provides information about constants, functions and methods of the Python interpreter. 
 sys — System-specific parameters and functions. This module provides access to some variables used or maintained by the 
 interpreter and to functions that interact strongly with the interpreter.
@@ -48,9 +51,7 @@ def restore(destination_ip, source_ip):
     source_mac = get_mac(source_ip)
     packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc=source_mac)
     scapy.send(packet, count=4, verbose=False)
-    print(packet.summary())
-    print(packet.show())
-
+  
 
 target_ip = "192.168.2.123"
 gateway_ip = "192.168.2.1"
