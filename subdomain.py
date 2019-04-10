@@ -2,8 +2,9 @@
 
 #!/usr/bin/env python
 
+
 import requests
-import optparse
+import argparse
 
 '''
 http://docs.python-requests.org/en/master/
@@ -14,41 +15,40 @@ Requests will allow you to send HTTP/1.1 requests using Python. With it, you can
 multipart files, and parameters via simple Python libraries. It also allows you to access the response data of Python
 in the same way.
 
-https://docs.python.org/3/library/optparse.html?highlight=optparse#module-optparse
-optparse is a more convenient, flexible, and powerful library for parsing command-line options.
-optparse uses a more declarative style of command-line parsing.
+https://docs.python.org/3/library/argparse.html?highlight=argparse#module-argparse
+The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments 
+it requires, and argparse will figure out how to parse those. 
 
 '''
 
-def request(URL):
-    try:
-        return requests.get(URL)
-    except requests.exceptions.ConnectionError:
-        pass
+parser = argparse.ArgumentParser(description="\n[+] Usage: python spider.py -u <url> -w <word_file>  or --help for more")
+parser.add_argument("-u", "--url", dest="URL", help="specify the target url")
+parser.add_argument("-w", "--wordfile", dest="WFILE", help="specify a wordfile")
+parsed_args = parser.parse_args()
+if parsed_args.URL is None:
+    parser.error("[-] Please specify an url, -h or --help for more")
+if parsed_args.WFILE is None:
+    parser.error("[-] Please specify a word_file, -h or --help for more")
     
-def get_arguments():
-    parser = optparse.OptionParser()
-    parser.add_option("-u", "--url", dest="URL", help="Target url to find ")
-    (options, arguments) = parser.parse_args()
-    if not options.URL:
-        parser.error("[-] Please specify an URL, -h or --help for more")
-    return options
+try:
+    URL = parsed_args.URL
+    WFILE = parsed_args.WFILE
 
-def finding_subdomain(URL):
-    with open("/root/subdomain.txt", "r") as wordlist_file:
-        for line in wordlist_file:
+except:
+    print(parser.description)
+    exit(0)
+
+with open(WFILE, "r") as word_file:
+    try:
+        for line in word_file:
             word = line.strip()
             test_url = URL + "/" + word
-            response = request(test_url)
+            response = requests.get(test_url)
             if response:
-                print("[+] Discovering URL --> " + test_url)
-                
+                print("[+] Discovering URL ---> " + test_url)
+    except KeyboardInterrupt:
+        print("\n[-] Detected CTRL+C ....\n")
 
-try:
-    options = get_arguments()
-    finding_subdomain(options.URL)
-except KeyboardInterrupt:
-    print("\n[-] Detected CTRL +C ... \n")
 
 
 
